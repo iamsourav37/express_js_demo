@@ -21,9 +21,13 @@ router.get("/add-product", (req, res, next) => {
   );
 });
 
+router.get("/:name", (req, res, next) => {
+  res.send(`<h1>You are an admin your name is ${req.params.name}</h1>`);
+});
+
 router.post("/add-product", (req, res, next) => {
-  console.log("req body :", req.body.prod);
-  res.redirect("/");
+  console.log("req body :", req.body);
+  res.redirect("/admin");
 });
 
 module.exports = router;
